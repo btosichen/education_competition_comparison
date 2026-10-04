@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>臺灣教育創新雙星大解析 | 2027 教育創新100 vs. 2025 未來教育 臺灣100</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter & Noto Sans TC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        apple: {
+                            bg: '#F5F5F7',
+                            card: '#FFFFFF',
+                            darkBg: '#0D0E12',
+                            darkCard: '#1C1C1E'
+                        },
+                        // Competition 2027: iPhone Deep Purple & Rose
+                        p2027: {
+                            primary: '#8B5CF6',
+                            secondary: '#EC4899',
+                            gradientFrom: '#9333EA',
+                            gradientTo: '#F43F5E',
+                            lightBg: '#F5F3FF',
+                            border: '#DDD6FE',
+                            badge: '#7C3AED'
+                        },
+                        // Competition 2025: iPhone Titanium Cyan & Pacific Blue
+                        p2025: {
+                            primary: '#0284C7',
+                            secondary: '#06B6D4',
+                            gradientFrom: '#2563EB',
+                            gradientTo: '#06B6D4',
+                            lightBg: '#F0F9FF',
+                            border: '#BAE6FD',
+                            badge: '#0284C7'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'apple-glass': '0 8px 32px 0 rgba(0, 0, 0, 0.08)',
+                        'glow-purple': '0 0 25px -5px rgba(139, 92, 246, 0.35)',
+                        'glow-cyan': '0 0 25px -5px rgba(6, 182, 212, 0.35)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #F5F5F7;
+            color: #1D1D1F;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Glassmorphism Effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .dark .glass-card {
+            background: rgba(28, 28, 30, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Gradient Text */
+        .text-gradient-purple {
+            background: linear-gradient(135deg, #A855F7 0%, #EC4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-cyan {
+            background: linear-gradient(135deg, #0284C7 0%, #06B6D4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-hero {
+            background: linear-gradient(135deg, #6366F1 0%, #A855F7 50%, #06B6D4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Dynamic Diff Highlight Animation */
+        .diff-highlight {
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .diff-highlight::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            border-radius: 9999px;
+            transition: opacity 0.3s ease;
+        }
+
+        .diff-highlight-2027::before {
+            background: linear-gradient(to bottom, #A855F7, #EC4899);
+        }
+
+        .diff-highlight-2025::before {
+            background: linear-gradient(to bottom, #0284C7, #06B6D4);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F1F1F1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94A3B8;
+        }
+
+        /* Print styling */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            .glass-card {
+                box-shadow: none !important;
+                border: 1px solid #ccc !important;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-purple-500 selection:text-white">
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 glass-card border-b border-gray-200/60 dark:border-gray-800/60 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 via-pink-500 to-cyan-400 p-[2px] flex items-center justify-center shadow-md">
+                    <div class="w-full h-full bg-white dark:bg-gray-900 rounded-[10px] flex items-center justify-center">
+                        <i class="fa-solid fa-lightbulb text-xl text-purple-600"></i>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold tracking-tight text-gray-900 dark:text-white flex items-center gap-2">
+                        臺灣教育創新雙星大解析
+                        <span class="text-xs px-2 py-0.5 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 font-semibold border border-purple-200">2025 vs 2027</span>
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Header Quick Actions -->
+            <div class="flex items-center space-x-2 sm:space-x-4 no-print">
+                <a href="#wizard-section" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-gradient-to-r from-purple-600 to-cyan-600 text-white hover:opacity-90 transition-all shadow-sm">
+                    <i class="fa-solid fa-wand-magic-sparkles text-xs"></i>
+                    <span>選獎神器</span>
+                </a>
+                <button onclick="window.print()" class="p-2 rounded-full text-gray-500 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" title="列印或另存PDF">
+                    <i class="fa-solid fa-print"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+        <!-- Hero Banner Section -->
+        <section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900 text-white p-6 sm:p-10 shadow-2xl">
+            <!-- Background Glowing Orbs (Apple Aesthetics) -->
+            <div class="absolute -top-24 -left-24 w-72 h-72 bg-purple-600/30 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -right-24 w-80 h-80 bg-cyan-500/25 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="relative z-10 text-center max-w-3xl mx-auto space-y-4">
+                <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold tracking-wider text-purple-300 bg-purple-900/50 border border-purple-500/30 uppercase">
+                    全面對比與選獎指南
+                </span>
+                <h2 class="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight">
+                    尋找最適合你的 <br class="hidden sm:inline"/>
+                    <span class="text-gradient-hero">教育創新舞台</span>
+                </h2>
+                <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
+                    精確釐清由《親子天下》主導的 <strong class="text-purple-300">「2027 教育創新100」</strong> 與遠見·天下文化主導的 <strong class="text-cyan-300">「2025 第五屆【未來教育 臺灣100】」</strong> 之異同，快速找到最能發揮價值的報名賽道！
+                </p>
+
+                <!-- Dual Brand Badges -->
+                <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+                    <!-- Brand 1: 2027 -->
+                    <div class="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-purple-500/30 hover:border-purple-400 transition-all group">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-purple-500 text-white shadow-sm">親子天下體系</span>
+                            <span class="text-xs text-purple-300 font-mono font-bold">2027 屆期</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-purple-200 transition-colors">2027 教育創新100</h3>
+                        <p class="text-xs text-purple-200/80 mt-1">「微光成炬，點亮教育創新路」— 適逢十週年，回歸教育基本面與真實改變。</p>
+                        <div class="mt-3 flex items-center gap-2 text-xs font-medium text-purple-300">
+                            <i class="fa-solid fa-bullseye"></i> 聚焦：跨域連結、專案韌性與迭代
+                        </div>
+                    </div>
+
+                    <!-- Brand 2: 2025 -->
+                    <div class="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-cyan-500/30 hover:border-cyan-400 transition-all group">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-cyan-600 text-white shadow-sm">遠見·天下文化體系</span>
+                            <span class="text-xs text-cyan-300 font-mono font-bold">2025 屆期</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-cyan-200 transition-colors">2025 第五屆【未來教育 臺灣100】</h3>
+                        <p class="text-xs text-cyan-200/80 mt-1">「AI時代共融未來，教育的變與不變」— 聚焦AI軟技能與多元平權。</p>
+                        <div class="mt-3 flex items-center gap-2 text-xs font-medium text-cyan-300">
+                            <i class="fa-solid fa-gift"></i> 聚焦：AI工具、教育平權、最高20萬補助
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Decision Wizard Section -->
+        <section id="wizard-section" class="scroll-mt-24">
+            <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-apple-glass border border-purple-100">
+                <div class="text-center max-w-2xl mx-auto mb-6">
+                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-purple-500 to-cyan-500 text-white inline-block mb-2 shadow-sm">
+                        智能適配測驗
+                    </span>
+                    <h3 class="text-xl sm:text-2xl font-bold text-gray-900">3 秒快速診斷：我適合投哪一個？</h3>
+                    <p class="text-xs sm:text-sm text-gray-500 mt-1">請勾選符合您專案特質的條件，系統將為您計算最佳適合度：</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+                    <!-- Option 1 -->
+                    <label class="flex items-start p-3.5 rounded-xl border border-gray-200 bg-white/70 hover:bg-purple-50/50 cursor-pointer transition-all space-x-3">
+                        <input type="checkbox" onchange="calculateMatch()" class="quiz-check mt-1 w-4 h-4 text-purple-600 rounded focus:ring-purple-500" data-target="2025" data-weight="2">
+                        <div class="text-xs leading-relaxed">
+                            <strong class="text-gray-900 block text-sm mb-0.5">專案包含 AI 科技應用 / 軟技能培育</strong>
+                            <span class="text-gray-500">強調 AI 工具結合或學生軟實力的養成。</span>
+                        </div>
+                    </label>
+
+                    <!-- Option 2 -->
+                    <label class="flex items-start p-3.5 rounded-xl border border-gray-200 bg-white/70 hover:bg-purple-50/50 cursor-pointer transition-all space-x-3">
+                        <input type="checkbox" onchange="calculateMatch()" class="quiz-check mt-1 w-4 h-4 text-purple-600 rounded focus:ring-purple-500" data-target="2027" data-weight="2">
+                        <div class="text-xs leading-relaxed">
+                            <strong class="text-gray-900 block text-sm mb-0.5">著重跨域資源連結與真實學習改變</strong>
+                            <span class="text-gray-500">重視因應問題的持續迭代與組織韌性。</span>
+                        </div>
+                    </label>
+
+                    <!-- Option 3 -->
+                    <label class="flex items-start p-3.5 rounded-xl border border-gray-200 bg-white/70 hover:bg-purple-50/50 cursor-pointer transition-all space-x-3">
+                        <input type="checkbox" onchange="calculateMatch()" class="quiz-check mt-1 w-4 h-4 text-purple-600 rounded focus:ring-purple-500" data-target="2025" data-weight="3">
+                        <div class="text-xs leading-relaxed">
+                            <strong class="text-gray-900 block text-sm mb-0.5">關注特殊教育 / 早療 / 弱勢平權</strong>
+                            <span class="text-gray-500">特別強調多元共融與偏鄉/弱勢照顧。</span>
+                        </div>
+                    </label>
+
+                    <!-- Option 4 -->
+                    <label class="flex items-start p-3.5 rounded-xl border border-gray-200 bg-white/70 hover:bg-purple-50/50 cursor-pointer transition-all space-x-3">
+                        <input type="checkbox" onchange="calculateMatch()" class="quiz-check mt-1 w-4 h-4 text-purple-600 rounded focus:ring-purple-500" data-target="2025" data-weight="3">
+                        <div class="text-xs leading-relaxed">
+                            <strong class="text-gray-900 block text-sm mb-0.5">需要實質獎金 (10萬) 或補助金 (最高20萬)</strong>
+                            <span class="text-gray-500">希望獲得教學補助經費支援專案。</span>
+                        </div>
+                    </label>
+
+                    <!-- Option 5 -->
+                    <label class="flex items-start p-3.5 rounded-xl border border-gray-200 bg-white/70 hover:bg-purple-50/50 cursor-pointer transition-all space-x-3">
+                        <input type="checkbox" onchange="calculateMatch()" class="quiz-check mt-1 w-4 h-4 text-purple-600 rounded focus:ring-purple-500" data-target="2027" data-weight="2">
+                        <div class="text-xs leading-relaxed">
+                            <strong class="text-gray-900 block text-sm mb-0.5">彈性報名條件（無強制實施人數/階段）</strong>
+                            <span class="text-gray-500">不被硬性資格（如人數≥5人、不可重複獲獎）限制。</span>
+                        </div>
+                    </label>
+
+                    <!-- Option 6 -->
+                    <label class="flex items-start p-3.5 rounded-xl border border-gray-200 bg-white/70 hover:bg-purple-50/50 cursor-pointer transition-all space-x-3">
+                        <input type="checkbox" onchange="calculateMatch()" class="quiz-check mt-1 w-4 h-4 text-purple-600 rounded focus:ring-purple-500" data-target="2027" data-weight="2">
+                        <div class="text-xs leading-relaxed">
+                            <strong class="text-gray-900 block text-sm mb-0.5">期望於 2026/2027 年參與社群交流盛會</strong>
+                            <span class="text-gray-500">規劃參與 2027 年 6 月之頒獎典禮暨嘉年華。</span>
+                        </div>
+                    </label>
+                </div>
+
+                <!-- Result Score Bar Display -->
+                <div id="quiz-result-box" class="mt-6 pt-6 border-t border-gray-100 max-w-2xl mx-auto">
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div class="p-3 rounded-2xl bg-purple-50 border border-purple-200">
+                            <span class="text-xs font-semibold text-purple-700 block">2027 教育創新100 適合度</span>
+                            <span id="score-2027" class="text-2xl font-black text-purple-700">50%</span>
+                            <div class="w-full bg-purple-200 h-2 rounded-full mt-2 overflow-hidden">
+                                <div id="bar-2027" class="bg-purple-600 h-full rounded-full transition-all duration-500" style="width: 50%;"></div>
+                            </div>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-sky-50 border border-sky-200">
+                            <span class="text-xs font-semibold text-sky-700 block">2025 未來教育 臺灣100 適合度</span>
+                            <span id="score-2025" class="text-2xl font-black text-sky-700">50%</span>
+                            <div class="w-full bg-sky-200 h-2 rounded-full mt-2 overflow-hidden">
+                                <div id="bar-2025" class="bg-sky-600 h-full rounded-full transition-all duration-500" style="width: 50%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p id="recommendation-text" class="text-center text-xs font-bold text-gray-700 mt-3">
+                        💡 請在上方點選您的專案特質以獲取個人化推薦建議！
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: Common Points (相同處) -->
+        <section class="space-y-6">
+            <div class="flex items-center justify-between border-b border-gray-200 pb-3">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-lg bg-emerald-500 text-white flex items-center justify-center font-bold text-sm shadow-sm">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-900">一、兩大活動 4 大共通點 (相同處)</h2>
+                </div>
+                <span class="text-xs px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 font-medium">教育共好理念</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                <!-- Common Item 1 -->
+                <div class="glass-card rounded-2xl p-5 border-l-4 border-l-emerald-500 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-start space-x-3">
+                        <div class="p-2 bg-emerald-100 rounded-xl text-emerald-600 shrink-0">
+                            <i class="fa-solid fa-bullseye text-lg"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="font-bold text-base text-gray-900">1. 活動宗旨與核心理念</h3>
+                            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                                兩者皆旨在挖掘、表揚並推廣臺灣在地優質的教育創新實踐，致力於建立教育創衛生態圈並擴大社會影響力。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Common Item 2 -->
+                <div class="glass-card rounded-2xl p-5 border-l-4 border-l-emerald-500 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-start space-x-3">
+                        <div class="p-2 bg-emerald-100 rounded-xl text-emerald-600 shrink-0">
+                            <i class="fa-solid fa-award text-lg"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="font-bold text-base text-gray-900">2. 遴選規模與名額</h3>
+                            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                                兩者最終皆預計選出 <strong class="text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">100 件優質專案</strong> 或教育創新領袖。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Common Item 3 -->
+                <div class="glass-card rounded-2xl p-5 border-l-4 border-l-emerald-500 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-start space-x-3">
+                        <div class="p-2 bg-emerald-100 rounded-xl text-emerald-600 shrink-0">
+                            <i class="fa-solid fa-share-nodes text-lg"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="font-bold text-base text-gray-900">3. 重視擴散性與複製性</h3>
+                            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                                兩者均強調教學實踐或創新作法應具備「可複製性」或「可擴散性」，並會將獲選專案於網站公開無償分享給更多教育工作者參考學習。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Common Item 4 -->
+                <div class="glass-card rounded-2xl p-5 border-l-4 border-l-emerald-500 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-start space-x-3">
+                        <div class="p-2 bg-emerald-100 rounded-xl text-emerald-600 shrink-0">
+                            <i class="fa-solid fa-users text-lg"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="font-bold text-base text-gray-900">4. 開放多元背景參與</h3>
+                            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                                兩者皆不限教學主題與形式，廣邀學校教師、實驗教育團隊、政府單位或非營利組織等各界教育工作者參賽。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Detailed Comparison Matrix (差異處比較) -->
+        <section class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-200 pb-3">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-r from-purple-600 to-cyan-500 text-white flex items-center justify-center font-bold text-sm shadow-sm">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-gray-900">二、 差異處詳細對比</h2>
+                        <p class="text-xs text-gray-500">以 Apple 鮮豔配色標示各自特色焦點</p>
+                    </div>
+                </div>
+
+                <!-- View Switcher Controls -->
+                <div class="flex items-center bg-gray-200/80 p-1 rounded-xl text-xs font-semibold self-start sm:self-auto">
+                    <button id="btn-view-matrix" onclick="switchView('matrix')" class="px-3 py-1.5 rounded-lg bg-white text-gray-900 shadow-sm transition-all flex items-center gap-1">
+                        <i class="fa-solid fa-table-cells"></i> 矩陣對照
+                    </button>
+                    <button id="btn-view-cards" onclick="switchView('cards')" class="px-3 py-1.5 rounded-lg text-gray-600 hover:text-gray-900 transition-all flex items-center gap-1">
+                        <i class="fa-solid fa-border-all"></i> 分頁卡片
+                    </button>
+                </div>
+            </div>
+
+            <!-- View 1: Detailed Side-by-Side Matrix Table -->
+            <div id="view-matrix" class="overflow-x-auto rounded-3xl shadow-apple-glass border border-gray-200 bg-white">
+                <table class="w-full text-left border-collapse min-w-[700px]">
+                    <thead>
+                        <tr class="border-b border-gray-200 bg-gray-50/80">
+                            <th class="p-4 sm:p-5 w-1/5 text-xs font-bold text-gray-500 uppercase tracking-wider">比較項目</th>
+                            <th class="p-4 sm:p-5 w-2/5 bg-purple-50/50 border-l border-r border-purple-100">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-bold text-sm sm:text-base text-purple-900 flex items-center gap-2">
+                                        <span class="w-3 h-3 rounded-full bg-purple-600 inline-block"></span>
+                                        2027 教育創新100
+                                    </span>
+                                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-200 text-purple-800">親子天下</span>
+                                </div>
+                            </th>
+                            <th class="p-4 sm:p-5 w-2/5 bg-sky-50/50">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-bold text-sm sm:text-base text-sky-900 flex items-center gap-2">
+                                        <span class="w-3 h-3 rounded-full bg-sky-500 inline-block"></span>
+                                        2025 第五屆【未來教育 臺灣100】
+                                    </span>
+                                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-sky-200 text-sky-800">遠見·天下文化</span>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 text-xs sm:text-sm">
+                        <!-- Row 1: 主辦單位 -->
+                        <tr class="hover:bg-gray-50/50 transition-colors">
+                            <td class="p-4 font-bold text-gray-700 bg-gray-50/30">
+                                <i class="fa-solid fa-building text-gray-400 mr-2"></i>主辦單位
+                            </td>
+                            <td class="p-4 bg-purple-50/20 border-l border-r border-purple-100 diff-highlight diff-highlight-2027">
+                                <div class="font-semibold text-purple-950">親子天下教育創新中心</div>
+                                <div class="text-xs text-purple-700 mt-1">｜ 社團法人台灣翻轉未來創新協會</div>
+                            </td>
+                            <td class="p-4 bg-sky-50/20 diff-highlight diff-highlight-2025">
+                                <div class="font-semibold text-sky-950">遠見·天下文化教育基金會</div>
+                                <div class="text-xs text-sky-700 mt-1">（合作單位：顯恩慈善基金會）</div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 2: 徵件主軸與精神 -->
+                        <tr class="hover:bg-gray-50/50 transition-colors">
+                            <td class="p-4 font-bold text-gray-700 bg-gray-50/30">
+                                <i class="fa-solid fa-compass text-gray-400 mr-2"></i>徵件主軸與精神
+                            </td>
+                            <td class="p-4 bg-purple-50/20 border-l border-r border-purple-100 diff-highlight diff-highlight-2027">
+                                <span class="px-2.5 py-1 rounded-full bg-purple-100 text-purple-800 font-bold text-xs inline-block mb-2">
+                                    「微光成炬，點亮教育創新路」
+                                </span>
+                                <p class="text-gray-700 leading-relaxed">
+                                    適逢<strong class="text-purple-800">十週年</strong>，主張<strong class="underline decoration-purple-400">回歸教育基本面</strong>，不追逐特定潮流議題，重點在於「你為了孩子做了什麼真實的改變」。
+                                </p>
+                            </td>
+                            <td class="p-4 bg-sky-50/20 diff-highlight diff-highlight-2025">
+                                <span class="px-2.5 py-1 rounded-full bg-sky-100 text-sky-800 font-bold text-xs inline-block mb-2">
+                                    「AI時代共融未來，教育的變與不變」
+                                </span>
+                                <p class="text-gray-700 leading-relaxed">
+                                    聚焦於 <strong class="text-sky-800">AI 科技浪潮下學生軟技能的培育</strong>，並特別強調<strong class="underline decoration-sky-400">教育平權與多元共融</strong>（如早療、特殊兒及弱勢學童）。
+                                </p>
+                            </td>
+                        </tr>
+
+                        <!-- Row 3: 評選指標 -->
+                        <tr class="hover:bg-gray-50/50 transition-colors">
+                            <td class="p-4 font-bold text-gray-700 bg-gray-50/30">
+                                <i class="fa-solid fa-list-check text-gray-400 mr-2"></i>評選指標
+                            </td>
+                            <td class="p-4 bg-purple-50/20 border-l border-r border-purple-100 diff-highlight diff-highlight-2027">
+                                <ol class="space-y-1.5 list-decimal list-inside font-medium text-purple-900">
+                                    <li>看見問題、同理需求</li>
+                                    <li>以學生或受助者為中心的改變</li>
+                                    <li>跨域連結優勢</li>
+                                    <li>持續迭代與韌性</li>
+                                    <li>可擴散與可複製</li>
+                                </ol>
+                            </td>
+                            <td class="p-4 bg-sky-50/20 diff-highlight diff-highlight-2025">
+                                <ol class="space-y-1.5 list-decimal list-inside font-medium text-sky-900">
+                                    <li>創新性</li>
+                                    <li>可複製性</li>
+                                    <li>學習效益</li>
+                                    <li>影響力</li>
+                                </ol>
+                            </td>
+                        </tr>
+
+                        <!-- Row 4: 報名資格與條件限制 -->
+                        <tr class="hover:bg-gray-50/50 transition-colors">
+                            <td class="p-4 font-bold text-gray-700 bg-gray-50/30">
+                                <i class="fa-solid fa-id-card text-gray-400 mr-2"></i>報名資格與條件限制
+                            </td>
+                            <td class="p-4 bg-purple-50/20 border-l border-r border-purple-100 diff-highlight diff-highlight-2027">
+                                <div class="p-3 bg-purple-100/60 rounded-xl border border-purple-200">
+                                    <strong class="text-purple-900 block mb-1">高彈性資格：</strong>
+                                    面向廣泛的「泛教育工作者」，格式與資格彈性較高。
+                                </div>
+                            </td>
+                            <td class="p-4 bg-sky-50/20 diff-highlight diff-highlight-2025">
+                                <div class="space-y-2">
+                                    <span class="inline-block px-2 py-0.5 rounded bg-red-100 text-red-700 text-xs font-bold">訂有明確硬性規定</span>
+                                    <ul class="space-y-1 text-gray-700 list-disc list-inside text-xs">
+                                        <li>實施對象須達 <strong class="text-sky-800">5人（含）以上</strong>，涵蓋幼兒園至高中學生</li>
+                                        <li>專案須為 <strong class="text-sky-800">已實施狀態</strong></li>
+                                        <li>分為個人、團隊（3人以下）、組織機構（4人以上）報名</li>
+                                        <li><strong class="text-red-600">前四屆得獎者不可持相同專案重複報名</strong></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 5: 辦理時程 -->
+                        <tr class="hover:bg-gray-50/50 transition-colors">
+                            <td class="p-4 font-bold text-gray-700 bg-gray-50/30">
+                                <i class="fa-solid fa-calendar-days text-gray-400 mr-2"></i>辦理時程 (屆期)
+                            </td>
+                            <td class="p-4 bg-purple-50/20 border-l border-r border-purple-100 diff-highlight diff-highlight-2027">
+                                <span class="px-2 py-0.5 rounded bg-purple-200 text-purple-800 text-xs font-bold mb-2 inline-block">2027 年屆期</span>
+                                <ul class="space-y-1 font-mono text-xs text-purple-950">
+                                    <li>🚀 2026/09/23 募集啟動</li>
+                                    <li>⏰ 2027/02/25 報名截止</li>
+                                    <li>📢 2027/05/20 公布入選名單</li>
+                                    <li>🎉 2027/06/26 頒獎典禮暨嘉年華</li>
+                                </ul>
+                            </td>
+                            <td class="p-4 bg-sky-50/20 diff-highlight diff-highlight-2025">
+                                <span class="px-2 py-0.5 rounded bg-sky-200 text-sky-800 text-xs font-bold mb-2 inline-block">2025 年屆期</span>
+                                <ul class="space-y-1 font-mono text-xs text-sky-950">
+                                    <li>🚀 2025/04/18～08/22 報名徵件</li>
+                                    <li>🔍 2025/09 評選</li>
+                                    <li>📢 2025/10月中 公布得獎名單</li>
+                                    <li>🏆 2025/12 贈獎典禮</li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <!-- Row 6: 實質獎勵與延伸資源 -->
+                        <tr class="hover:bg-gray-50/50 transition-colors">
+                            <td class="p-4 font-bold text-gray-700 bg-gray-50/30">
+                                <i class="fa-solid fa-gift text-gray-400 mr-2"></i>實質獎勵與延伸資源
+                            </td>
+                            <td class="p-4 bg-purple-50/20 border-l border-r border-purple-100 diff-highlight diff-highlight-2027">
+                                <p class="text-gray-700">
+                                    入選為 <strong class="text-purple-800">100位教育創新領袖</strong>，參加頒獎典禮暨嘉年華交流分享，並透過媒體平台獲得露出與報導。
+                                </p>
+                            </td>
+                            <td class="p-4 bg-sky-50/20 diff-highlight diff-highlight-2025">
+                                <div class="space-y-2">
+                                    <p class="text-gray-700">
+                                        入選 100 件獲得獎狀、月刊贈閱、媒體報導及種子講師。
+                                    </p>
+                                    <div class="space-y-1.5 pt-1">
+                                        <div class="p-2 rounded-lg bg-cyan-100/70 border border-cyan-200 text-xs">
+                                            <strong class="text-cyan-900 block">🎁 未來教育特別獎 (10件)</strong>
+                                            額外頒發 <strong class="text-red-600">8萬元獎金 + 2萬元圖書禮券</strong>（總值10萬元）
+                                        </div>
+                                        <div class="p-2 rounded-lg bg-sky-100/70 border border-sky-200 text-xs">
+                                            <strong class="text-sky-900 block">💰 顯恩慈善基金會補助</strong>
+                                            得獎者可申請最高 <strong class="text-emerald-600 font-bold">20 萬元之教學補助計畫</strong>
+                                        </div>
+                                        <div class="p-2 rounded-lg bg-gray-100 text-xs">
+                                            <strong class="text-gray-800">🏨 早鳥抽獎：</strong>長榮酒店聯合住宿券
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- View 2: Cards Grid View (Hidden by default) -->
+            <div id="view-cards" class="hidden grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 2027 Card -->
+                <div class="glass-card rounded-3xl p-6 border-2 border-purple-200 shadow-apple-glass space-y-4">
+                    <div class="flex items-center justify-between border-b border-purple-100 pb-3">
+                        <div>
+                            <span class="text-xs font-bold text-purple-600 uppercase tracking-wider">親子天下體系</span>
+                            <h3 class="text-xl font-black text-purple-950">2027 教育創新100</h3>
+                        </div>
+                        <span class="w-10 h-10 rounded-2xl bg-purple-600 text-white flex items-center justify-center font-bold text-lg">
+                            '27
+                        </span>
+                    </div>
+
+                    <div class="space-y-3 text-xs sm:text-sm">
+                        <div class="p-3 bg-purple-50 rounded-xl">
+                            <strong class="text-purple-900 block text-xs font-bold mb-1">🎯 徵件精神</strong>
+                            「微光成炬，點亮教育創新路」— 適逢十週年，回歸教育基本面，重點在於「你為了孩子做了什麼真實的改變」。
+                        </div>
+
+                        <div>
+                            <strong class="text-gray-900 block text-xs font-bold mb-1">📋 評選指標 (5大項目)</strong>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2 py-1 bg-purple-100 text-purple-800 rounded-lg text-xs">看見問題、同理需求</span>
+                                <span class="px-2 py-1 bg-purple-100 text-purple-800 rounded-lg text-xs">學生受助者中心</span>
+                                <span class="px-2 py-1 bg-purple-100 text-purple-800 rounded-lg text-xs">跨域連結優勢</span>
+                                <span class="px-2 py-1 bg-purple-100 text-purple-800 rounded-lg text-xs">持續迭代與韌性</span>
+                                <span class="px-2 py-1 bg-purple-100 text-purple-800 rounded-lg text-xs">可擴散與複製</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <strong class="text-gray-900 block text-xs font-bold mb-1">👥 報名資格</strong>
+                            面向廣泛的「泛教育工作者」，格式與資格彈性較高。
+                        </div>
+
+                        <div>
+                            <strong class="text-gray-900 block text-xs font-bold mb-1">🎁 獲選資源</strong>
+                            入選100位教育創新領袖，參與頒獎典禮暨嘉年華交流分享、媒體露出。
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2025 Card -->
+                <div class="glass-card rounded-3xl p-6 border-2 border-sky-200 shadow-apple-glass space-y-4">
+                    <div class="flex items-center justify-between border-b border-sky-100 pb-3">
+                        <div>
+                            <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">遠見·天下文化體系</span>
+                            <h3 class="text-xl font-black text-sky-950">2025 第五屆【未來教育 臺灣100】</h3>
+                        </div>
+                        <span class="w-10 h-10 rounded-2xl bg-sky-500 text-white flex items-center justify-center font-bold text-lg">
+                            '25
+                        </span>
+                    </div>
+
+                    <div class="space-y-3 text-xs sm:text-sm">
+                        <div class="p-3 bg-sky-50 rounded-xl">
+                            <strong class="text-sky-900 block text-xs font-bold mb-1">🎯 徵件精神</strong>
+                            「AI時代共融未來，教育的變與不變」— 聚焦AI科技浪潮下學生軟技能培育與教育平權（早療、特殊兒及弱勢）。
+                        </div>
+
+                        <div>
+                            <strong class="text-gray-900 block text-xs font-bold mb-1">📋 評選指標 (4大項目)</strong>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2 py-1 bg-sky-100 text-sky-800 rounded-lg text-xs">創新性</span>
+                                <span class="px-2 py-1 bg-sky-100 text-sky-800 rounded-lg text-xs">可複製性</span>
+                                <span class="px-2 py-1 bg-sky-100 text-sky-800 rounded-lg text-xs">學習效益</span>
+                                <span class="px-2 py-1 bg-sky-100 text-sky-800 rounded-lg text-xs">影響力</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <strong class="text-gray-900 block text-xs font-bold mb-1">👥 報名資格限制</strong>
+                            實施對象須≥5人（幼兒園至高中）；已實施狀態；分為個人/團隊/組織；不可重複獲獎專案報名。
+                        </div>
+
+                        <div>
+                            <strong class="text-gray-900 block text-xs font-bold mb-1">🎁 豐厚獎勵資源</strong>
+                            特別獎10萬元（8萬現金+2萬禮券）、最高 20 萬元教學補助申請、住宿券抽獎。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Visual Timeline comparison -->
+        <section class="space-y-6">
+            <div class="flex items-center space-x-3 border-b border-gray-200 pb-3">
+                <div class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold text-sm shadow-sm">
+                    <i class="fa-solid fa-timeline"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-900">三、 辦理時程對比 (Timeline Visualizer)</h2>
+                    <p class="text-xs text-gray-500">注意兩比賽之屆期與關鍵時間截點</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Timeline 2025 -->
+                <div class="glass-card rounded-2xl p-5 border border-sky-200 bg-sky-50/30">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-sky-900 flex items-center gap-2">
+                            <i class="fa-solid fa-clock text-sky-600"></i>
+                            2025 第五屆【未來教育 臺灣100】時程
+                        </h3>
+                        <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-sky-200 text-sky-800">2025 賽程</span>
+                    </div>
+
+                    <div class="relative border-l-2 border-sky-300 ml-4 space-y-6 py-2">
+                        <!-- Step 1 -->
+                        <div class="relative pl-6">
+                            <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-sky-500 border-2 border-white"></span>
+                            <span class="text-xs font-mono font-bold text-sky-700">2025/04/18 ～ 08/22</span>
+                            <p class="font-bold text-gray-800 text-xs sm:text-sm">報名徵件期間</p>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="relative pl-6">
+                            <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-sky-400 border-2 border-white"></span>
+                            <span class="text-xs font-mono font-bold text-sky-700">2025/09</span>
+                            <p class="font-bold text-gray-800 text-xs sm:text-sm">專家評選階段</p>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="relative pl-6">
+                            <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-sky-600 border-2 border-white"></span>
+                            <span class="text-xs font-mono font-bold text-sky-700">2025/10 月中</span>
+                            <p class="font-bold text-gray-800 text-xs sm:text-sm">公布得獎名單</p>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="relative pl-6">
+                            <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white"></span>
+                            <span class="text-xs font-mono font-bold text-emerald-700">2025/12</span>
+                            <p class="font-bold text-gray-800 text-xs sm:text-sm">隆重舉行贈獎典禮</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline 2027 -->
+                <div class="glass-card rounded-2xl p-5 border border-purple-200 bg-purple-50/30">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-purple-900 flex items-center gap-2">
+                            <i class="fa-solid fa-clock text-purple-600"></i>
+                            2027 教育創新100 時程
+                        </h3>
+                        <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-200 text-purple-800">2026-2027 賽程</span>
+                    </div>
+
+                    <div class="relative border-l-2 border-purple-300 ml-4 space-y-6 py-2">
+                        <!-- Step 1 -->
+                        <div class="relative pl-6">
+                            <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-purple-500 border-2 border-white"></span>
+                            <span class="text-xs font-mono font-bold text-purple-700">2026/09/23</span>
+                            <p class="font-bold text-gray-800 text-xs sm:text-sm">募集啟動大會</p>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="relative pl-6">
+                            <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-purple-600 border-2 border-white"></span>
+                            <span class="text-xs font-mono font-bold text-purple-700">2027/02/25</span>
+                            <p class="font-bold text-gray-800 text-xs sm:text-sm">報名截止時間</p>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="relative pl-6">
+                            <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-purple-700 border-2 border-white"></span>
+                            <span class="text-xs font-mono font-bold text-purple-700">2027/05/20</span>
+                            <p class="font-bold text-gray-800 text-xs sm:text-sm">公布入選 100 名單</p>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="relative pl-6">
+                            <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-pink-500 border-2 border-white"></span>
+                            <span class="text-xs font-mono font-bold text-pink-700">2027/06/26</span>
+                            <p class="font-bold text-gray-800 text-xs sm:text-sm">頒獎典禮暨嘉年華交流盛會</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Summary & Recommendation Guide (總結與參賽建議) -->
+        <section class="space-y-6">
+            <div class="flex items-center space-x-3 border-b border-gray-200 pb-3">
+                <div class="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center font-bold text-sm shadow-sm">
+                    <i class="fa-solid fa-compass-drafting"></i>
+                </div>
+                <h2 class="text-xl sm:text-2xl font-bold text-gray-900">四、 總結與投件攻略建議</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Strategic Choice A -->
+                <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white p-6 shadow-lg">
+                    <div class="relative z-10 space-y-3">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white/20 text-purple-200 backdrop-blur-md">
+                            <i class="fa-solid fa-star"></i> 適合選投：「2027 教育創新100」
+                        </div>
+                        <h3 class="text-lg font-bold text-white">若您的教學專案具備以下特質：</h3>
+                        <ul class="space-y-2 text-xs sm:text-sm text-purple-100 list-disc list-inside">
+                            <li>側重於<strong>跨域資源連結</strong>與多元合作</li>
+                            <li>強調專案因應環境變化的<strong>持續迭代與韌性</strong></li>
+                            <li>專注於帶來<strong>真實的學習改變</strong>而非追逐一時話題</li>
+                            <li>希望參與 <strong>2027 年的跨界交流嘉年華盛會</strong> 與社群對話</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Strategic Choice B -->
+                <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-sky-900 via-cyan-800 to-teal-900 text-white p-6 shadow-lg">
+                    <div class="relative z-10 space-y-3">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white/20 text-cyan-200 backdrop-blur-md">
+                            <i class="fa-solid fa-award"></i> 適合選投：「2025 第五屆【未來教育 臺灣100】」
+                        </div>
+                        <h3 class="text-lg font-bold text-white">若您的教學專案具備以下特質：</h3>
+                        <ul class="space-y-2 text-xs sm:text-sm text-cyan-100 list-disc list-inside">
+                            <li>包含 <strong>AI 工具應用</strong> 或學生軟技能養成</li>
+                            <li>著重 <strong>特殊教育 / 偏鄉早療 / 弱勢平權</strong> 等多元共融議題</li>
+                            <li>實施對象達 5 人以上，且專案已實際落地執行</li>
+                            <li>有計畫爭取 <strong>實際獎金（最高10萬）或專案補助金（最高20萬）</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 border-t border-gray-800 text-xs mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-2">
+            <p class="font-medium text-gray-300">臺灣教育創新競賽比較 Web App</p>
+            <p>資料來源：《親子天下》「2027 教育創新100」網頁 與 遠見·天下文化「2025 第五屆【未來教育 臺灣100】」簡章</p>
+            <p class="text-gray-500 text-[11px]">設計風格：Apple Dynamic Palette Edition</p>
+        </div>
+    </footer>
+
+    <script>
+        // View Mode Switcher
+        function switchView(mode) {
+            const matrixView = document.getElementById('view-matrix');
+            const cardsView = document.getElementById('view-cards');
+            const btnMatrix = document.getElementById('btn-view-matrix');
+            const btnCards = document.getElementById('btn-view-cards');
+
+            if (mode === 'matrix') {
+                matrixView.classList.remove('hidden');
+                cardsView.classList.add('hidden');
+                btnMatrix.className = 'px-3 py-1.5 rounded-lg bg-white text-gray-900 shadow-sm transition-all flex items-center gap-1';
+                btnCards.className = 'px-3 py-1.5 rounded-lg text-gray-600 hover:text-gray-900 transition-all flex items-center gap-1';
+            } else {
+                matrixView.classList.add('hidden');
+                cardsView.classList.remove('hidden');
+                btnCards.className = 'px-3 py-1.5 rounded-lg bg-white text-gray-900 shadow-sm transition-all flex items-center gap-1';
+                btnMatrix.className = 'px-3 py-1.5 rounded-lg text-gray-600 hover:text-gray-900 transition-all flex items-center gap-1';
+            }
+        }
+
+        // Quiz Logic
+        function calculateMatch() {
+            const checkboxes = document.querySelectorAll('.quiz-check');
+            let weight2027 = 0;
+            let weight2025 = 0;
+            let total2027Max = 0;
+            let total2025Max = 0;
+
+            checkboxes.forEach(cb => {
+                const target = cb.getAttribute('data-target');
+                const weight = parseInt(cb.getAttribute('data-weight'));
+
+                if (target === '2027') total2027Max += weight;
+                if (target === '2025') total2025Max += weight;
+
+                if (cb.checked) {
+                    if (target === '2027') weight2027 += weight;
+                    if (target === '2025') weight2025 += weight;
+                }
+            });
+
+            // Calculate percentage
+            let pct2027 = total2027Max > 0 ? Math.round((weight2027 / total2027Max) * 100) : 50;
+            let pct2025 = total2025Max > 0 ? Math.round((weight2025 / total2025Max) * 100) : 50;
+
+            if (weight2027 === 0 && weight2025 === 0) {
+                pct2027 = 50;
+                pct2025 = 50;
+            }
+
+            document.getElementById('score-2027').textContent = pct2027 + '%';
+            document.getElementById('bar-2027').style.width = pct2027 + '%';
+
+            document.getElementById('score-2025').textContent = pct2025 + '%';
+            document.getElementById('bar-2025').style.width = pct2025 + '%';
+
+            const recText = document.getElementById('recommendation-text');
+            if (pct2027 > pct2025) {
+                recText.innerHTML = '🎯 推薦投件：<strong class="text-purple-700">2027 教育創新100</strong>！您的專案非常符合其跨域迭代與真實改變的核心價值。';
+            } else if (pct2025 > pct2027) {
+                recText.innerHTML = '🎯 推薦投件：<strong class="text-sky-700">2025 第五屆【未來教育 臺灣100】</strong>！您的專案極符合AI平權/軟技能導向，並可積極爭取最高20萬補助金。';
+            } else if (weight2027 > 0 || weight2025 > 0) {
+                recText.innerHTML = '✨ 兩大競賽皆相當適合您！建議評估時程（2025年與2027年）或同時安排雙賽道投件策略！';
+            } else {
+                recText.innerHTML = '💡 請在上方點選您的專案特質以獲取個人化推薦建議！';
+            }
+        }
+    </script>
+</body>
+</html>
